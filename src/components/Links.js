@@ -2,11 +2,11 @@ import React from "react";
 
 const Links = ({ results, handleCopy, size }) => {
   return (
-    <div className="flex flex-col w-full text-sm xxs:text-base md:text-lg gap-y-6 ">
+    <div className="flex flex-col w-full text-sm xxs:text-base md:text-lg lg:text-xl gap-y-6 sm:gap-y-4">
       {results.map((result) => (
         <div
           key={result.id}
-          className="bg-white md:py-4 md:px-6 w-full flex flex-col md:flex-row items-center justify-between rounded-lg"
+          className="bg-white md:py-4 md:px-6 w-full flex flex-col md:flex-row items-center justify-between rounded-lg sm:rounded-md"
         >
           <p className="border-b-2 md:border-none w-full py-4 md:py-0 px-4 xsm:px-6 md:px-0">
             {size.width >= 1280
@@ -44,7 +44,7 @@ const Links = ({ results, handleCopy, size }) => {
               {result.minLink}
             </a>
             {result.copied ? (
-              <button className="py-2 w-full md:w-[105px] text-center bg-DarkViolet text-white rounded-md md:rounded-lg hover:cursor-pointer">
+              <button className="py-2 w-full md:w-[100px] text-center bg-DarkViolet text-white rounded-md md:rounded-lg hover:cursor-pointer text-xs xxs:text-sm md:text-base">
                 Copied!
               </button>
             ) : (
@@ -52,7 +52,7 @@ const Links = ({ results, handleCopy, size }) => {
                 onClick={(e) => {
                   handleCopy(e, result.id);
                 }}
-                className="py-2 w-full md:w-[105px] text-center bg-Cyan text-white rounded-md md:rounded-lg hover:bg-Cyan-hover hover:cursor-pointer"
+                className="py-2 w-full md:w-[100px] text-center bg-Cyan text-white rounded-md md:rounded-lg hover:bg-Cyan-hover hover:cursor-pointer text-xs xxs:text-sm md:text-base"
               >
                 Copy
               </button>

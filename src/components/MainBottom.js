@@ -14,6 +14,18 @@ const MainBottom = ({ size }) => {
       minLink: "https://rel.ink/k4lKyk",
       copied: false,
     },
+    {
+      id: 2,
+      longLink: "https://www.twitter.com/frontendmentor",
+      minLink: "https://rel.ink/gxOXp9",
+      copied: false,
+    },
+    {
+      id: 3,
+      longLink: "https://www.linkedin.com/company/frontend-mentor",
+      minLink: "https://rel.ink/gob3X9",
+      copied: false,
+    },
   ]);
   const [inputStatus, setInputStatus] = useState(false);
   const [fetchError, setFetchError] = useState("");
@@ -115,7 +127,7 @@ const MainBottom = ({ size }) => {
 
   return (
     <>
-      <div className="relative transform -translate-y-[72px] xs:-translate-y-[92px] xxs:-translate-y-[84px] md:-translate-y-[78px] flex flex-col items-center w-11/12 2lg:w-5/6 gap-y-6 sm:gap-y-8">
+      <div className="relative transform -translate-y-[72px] xs:-translate-y-[92px] xxs:-translate-y-[84px] md:-translate-y-[86px] flex flex-col items-center w-11/12 2lg:w-5/6 gap-y-6 sm:gap-y-8">
         <Input
           newLink={newLink}
           setNewLink={setNewLink}
