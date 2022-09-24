@@ -4,7 +4,6 @@ const Input = ({
   newLink,
   setNewLink,
   inputStatus,
-  setInputStatus,
   inputRef,
   shortenLink,
   fetchError,

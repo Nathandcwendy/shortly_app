@@ -127,7 +127,7 @@ const MainBottom = ({ size }) => {
 
   return (
     <>
-      <div className="relative transform -translate-y-[72px] xs:-translate-y-[92px] xxs:-translate-y-[84px] md:-translate-y-[86px] flex flex-col items-center w-11/12 2lg:w-5/6 gap-y-6 sm:gap-y-8">
+      <div className="relative transform -translate-y-[72px] xs:-translate-y-[92px] xxs:-translate-y-[84px] md:-translate-y-[88px] flex flex-col items-center w-11/12 2lg:w-5/6 gap-y-6 sm:gap-y-8">
         <Input
           newLink={newLink}
           setNewLink={setNewLink}
@@ -135,7 +135,6 @@ const MainBottom = ({ size }) => {
           inputStatus={inputStatus}
           shortenLink={shortenLink}
           fetchError={fetchError}
-          setInputStatus={setInputStatus}
           testUrl={testUrl}
         />
         <Links results={results} handleCopy={handleCopy} size={size} />
