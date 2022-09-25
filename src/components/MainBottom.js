@@ -7,26 +7,7 @@ import Links from "./Links";
 const MainBottom = ({ size }) => {
   const [newLink, setNewLink] = useState("");
   const [url, setUrl] = useState(null);
-  const [results, setResults] = useState([
-    {
-      id: 1,
-      longLink: "https://www.frontendmentor.io",
-      minLink: "https://rel.ink/k4lKyk",
-      copied: false,
-    },
-    {
-      id: 2,
-      longLink: "https://twitter.com/frontendmentor",
-      minLink: "https://rel.ink/gxOXp9",
-      copied: false,
-    },
-    {
-      id: 3,
-      longLink: "https://www.linkedin.com/company/frontend-mentor",
-      minLink: "https://rel.ink/gob3X9",
-      copied: false,
-    },
-  ]);
+  const [results, setResults] = useState([]);
   const [inputStatus, setInputStatus] = useState(false);
   const [fetchError, setFetchError] = useState("");
   const inputRef = useRef();

@@ -12,7 +12,10 @@ const Links = ({ results, handleCopy, size }) => {
             {result.longLink}
           </p>
           <div className="flex w-full flex-col md:flex-row md:w-auto gap-x-6 justify-start gap-y-4 md:gap-y-0 items-start md:items-center py-4 md:py-0 px-4 xsm:px-6 md:px-0">
-            <a className="text-Cyan" href={result.minLink}>
+            <a
+              className="text-Cyan overflow-hidden text-ellipsis whitespace-nowrap"
+              href={result.minLink}
+            >
               {result.minLink}
             </a>
             {result.copied ? (
