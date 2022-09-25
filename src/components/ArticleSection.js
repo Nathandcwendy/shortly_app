@@ -10,7 +10,7 @@ const ArticleSection = () => {
         <h2 className="font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.6rem] mb-6">
           Advanced Statistics
         </h2>
-        <p className="w-full xxs:w-11/12 xsm:w-5/6 lg:w-3/4 3lg:w-1/2 text-sm leading-[1.8] xsm:text-base xsm:leading-[1.8] sm:text-lg sm:leading-[1.8] lg:text-xl lg:leading-[1.8] xsm:px-4 text-center text-GrayishViolet">
+        <p className="w-full xxs:w-11/12 xsm:w-5/6 lg:w-3/4 3lg:w-1/2 text-base xsm:leading-[1.8] sm:text-lg sm:leading-[1.8] lg:text-xl lg:leading-[1.8] xsm:px-4 text-center text-GrayishViolet">
           Track how your links are performing across the web with our advanced
           statistics dashboard.
         </p>
