@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FaInstagram, FaPinterest, FaTwitter } from "react-icons/fa";
 import { GrFacebook } from "react-icons/gr";
 
@@ -86,9 +85,11 @@ const FooterMain = () => {
           </div>
         </div>
         <div className="flex gap-x-6 xsm:gap-x-10 md:gap-x-5 w-full justify-center md:justify-start md:w-1/4">
-          <Link to="/">
-            <GrFacebook className="text-white h-6 xs:h-7 w-6 xs:w-7 hover:text-Cyan focus:text-Cyan hover:cursor-pointer" />
-          </Link>
+          <a href="/">
+            <div>
+              <GrFacebook className="text-white h-6 xs:h-7 w-6 xs:w-7 hover:text-Cyan focus:text-Cyan hover:cursor-pointer" />
+            </div>
+          </a>
           <a
             href="https://twitter.com/nathanielsdiary"
             target="_blank"
@@ -96,9 +97,9 @@ const FooterMain = () => {
           >
             <FaTwitter className="text-white h-6 xs:h-7 w-6 xs:w-7 hover:text-Cyan focus:text-Cyan hover:cursor-pointer" />
           </a>
-          <Link to="/">
+          <a href="/">
             <FaPinterest className="text-white h-6 xs:h-7 w-6 xs:w-7 hover:text-Cyan focus:text-Cyan hover:cursor-pointer" />
-          </Link>
+          </a>
           <a
             href="https://www.instagram.com/nathanielsdiary"
             target="_blank"
