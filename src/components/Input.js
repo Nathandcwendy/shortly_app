@@ -10,7 +10,7 @@ const Input = ({
   testUrl,
 }) => {
   return (
-    <div className="relative flex flex-col space-between bg-mob-shortenImg md:bg-desk-shortenImg bg-DarkViolet bg-[left_6rem_bottom_2rem] md:bg-center bg-bg-once bg-no-repeat py-4 xxs:py-6 md:py-14 px-4 xxs:px-8 md:px-12 lg:px-16 rounded-xl w-full text-sm xxs:text-base md:text-lg">
+    <div className="relative flex flex-col space-between bg-mob-shortenImg md:bg-desk-shortenImg bg-DarkViolet bg-[left_6rem_bottom_2rem] md:bg-center bg-bg-once bg-no-repeat py-4 xxs:py-6 md:py-14 px-4 xxs:px-6 md:px-12 lg:px-16 rounded-xl w-full text-sm xxs:text-base md:text-lg">
       <form
         className="flex flex-grow flex-col md:flex-row gap-y-4 md:gap-y-0 md:gap-x-6"
         onSubmit={(e) => e.preventDefault()}
@@ -27,11 +27,6 @@ const Input = ({
               setNewLink(e.target.value);
               testUrl(e);
             }}
-            // onBlur={(e) => {
-            //   if (newLink === "") {
-            //     setInputStatus(false);
-            //   }
-            // }}
             autoComplete="off"
             spellCheck="false"
             required

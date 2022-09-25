@@ -16,7 +16,7 @@ const MainBottom = ({ size }) => {
     },
     {
       id: 2,
-      longLink: "https://www.twitter.com/frontendmentor",
+      longLink: "https://twitter.com/frontendmentor",
       minLink: "https://rel.ink/gxOXp9",
       copied: false,
     },
@@ -73,7 +73,6 @@ const MainBottom = ({ size }) => {
   useEffect(() => {
     const getInputStatus = () => {
       if (document.activeElement === inputRef.current && newLink === "") {
-        // setFetchError("");
         return true;
       } else {
         return false;
@@ -108,16 +107,13 @@ const MainBottom = ({ size }) => {
       const testResult = testRegex.test(e.target.value);
       const getResult = function (e) {
         if (testResult) {
-          // const result = newLink.replace(testRegex, "$3");
           const result = e.target.value;
           inputRef.current.classList.add("focus:border-green-300");
           setUrl(result);
           setFetchError("");
-          // return result;
         } else {
           inputRef.current.classList.remove("focus:border-green-300");
           setUrl(null);
-          // return "no match";
         }
       };
       getResult(e);
