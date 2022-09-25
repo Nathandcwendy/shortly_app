@@ -15,6 +15,8 @@ const Links = ({ results, handleCopy, size }) => {
             <a
               className="text-Cyan overflow-hidden text-ellipsis whitespace-nowrap"
               href={result.minLink}
+              target="_blank"
+              rel="noreferrer"
             >
               {result.minLink}
             </a>
