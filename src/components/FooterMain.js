@@ -85,7 +85,7 @@ const FooterMain = () => {
           </div>
         </div>
         <div className="flex gap-x-6 xsm:gap-x-10 md:gap-x-5 w-full justify-center md:justify-start md:w-1/4">
-          <a href="/">
+          <a href="/" aria-label="facebook">
             <div>
               <GrFacebook className="text-white h-6 xs:h-7 w-6 xs:w-7 hover:text-Cyan focus:text-Cyan hover:cursor-pointer" />
             </div>
