@@ -32,6 +32,7 @@ const MainBottom = () => {
           setResults([...results, newResult]);
           setFetchError("");
           setNewLink("");
+          setUrl(null);
           inputRef.current.classList.remove("focus:border-green-300");
         } else {
           throw new Error("Sorry, could not shorten this url");
@@ -67,19 +68,21 @@ const MainBottom = () => {
     const testRegex =
       /^(h?t?t?p?s?:?\/?\/?)?(w{0,3})?\.?(([\da-z.-]+)\.([a-z.]{2,6})([/\w%.\-_?+@\d&=$]*)*\/?)$/;
     const testInput = (e) => {
-      const testResult = testRegex.test(e.target.value.trim());
-      const getResult = function (e) {
-        if (testResult) {
-          const result = e.target.value;
-          inputRef.current.classList.add("focus:border-green-300");
-          setUrl(result);
-          setFetchError("");
-        } else {
-          inputRef.current.classList.remove("focus:border-green-300");
-          setUrl(null);
-        }
-      };
-      getResult(e);
+      if (newLink !== "" || e.target.value !== "") {
+        const testResult = testRegex.test(e.target.value.trim());
+        const getResult = function (e) {
+          if (testResult) {
+            const result = e.target.value;
+            inputRef.current.classList.add("focus:border-green-300");
+            setUrl(result);
+            setFetchError("");
+          } else {
+            inputRef.current.classList.remove("focus:border-green-300");
+            setUrl(null);
+          }
+        };
+        getResult(e);
+      }
     };
     testInput(e);
   };
