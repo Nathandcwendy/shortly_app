@@ -4,7 +4,7 @@ import Input from "./Input";
 import { useState, useRef, useEffect } from "react";
 import Links from "./Links";
 
-const MainBottom = ({ size }) => {
+const MainBottom = () => {
   const [newLink, setNewLink] = useState("");
   const [url, setUrl] = useState(null);
   const [results, setResults] = useState([]);
@@ -16,6 +16,7 @@ const MainBottom = ({ size }) => {
 
   const shortenLink = async () => {
     if (url) {
+      setNewLink("Loading...");
       try {
         const response = await fetch(`${API_URL}${url}`);
         const { ok, result } = await response.json();
@@ -62,25 +63,6 @@ const MainBottom = ({ size }) => {
     setInputStatus(getInputStatus());
   }, [newLink]);
 
-  const handleCopy = async (e, id) => {
-    const copiedResult = results.find((result) => result.id === id);
-    await navigator.clipboard.writeText(copiedResult.minLink).then(() => {
-      const newResults = results.map((result) =>
-        result.id === id ? { ...result, copied: !result.copied } : result
-      );
-      setResults(newResults);
-    });
-    const revertCopied = (e, id) => {
-      const revertedResults = results.map((result) =>
-        result.id === id ? { ...result, copied: false } : result
-      );
-      setResults(revertedResults);
-    };
-    setTimeout(() => {
-      revertCopied(e, id);
-    }, 2000);
-  };
-
   const testUrl = (e) => {
     const testRegex =
       /^(h?t?t?p?s?:?\/?\/?)?(w{0,3})?\.?(([\da-z.-]+)\.([a-z.]{2,6})([/\w .\-?+@\d&=$]*)*\/?)$/;
@@ -114,7 +96,7 @@ const MainBottom = ({ size }) => {
           fetchError={fetchError}
           testUrl={testUrl}
         />
-        <Links results={results} handleCopy={handleCopy} size={size} />
+        <Links results={results} setResults={setResults} />
       </div>
       <div className="flex items-center w-11/12 2lg:w-5/6">
         <ArticleSection />
