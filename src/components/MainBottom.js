@@ -65,7 +65,7 @@ const MainBottom = () => {
 
   const testUrl = (e) => {
     const testRegex =
-      /^(h?t?t?p?s?:?\/?\/?)?(w{0,3})?\.?(([\da-z.-]+)\.([a-z.]{2,6})([/\w.\-_?+@\d&=$]*)*\/?)$/;
+      /^(h?t?t?p?s?:?\/?\/?)?(w{0,3})?\.?(([\da-z.-]+)\.([a-z.]{2,6})([/\w%.\-_?+@\d&=$]*)*\/?)$/;
     const testInput = (e) => {
       const testResult = testRegex.test(e.target.value.trim());
       const getResult = function (e) {
