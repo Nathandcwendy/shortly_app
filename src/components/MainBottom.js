@@ -66,7 +66,9 @@ const MainBottom = () => {
 
   const testUrl = (e) => {
     const testRegex =
-      /^(h?t?t?p?s?:?\/?\/?)?(w{0,3})?\.?(([\da-z.-]+)\.([a-z.]{2,6})([/\w%.\-_?+@\d&=$]*)*\/?)$/;
+      /^(h?t?t?p?s?:?\/?\/?)?(w{0,3})?\.?(([\da-z.-]+)\.([a-z.]{2,6})([-._!"`'#%&,:;<>=@{}~$()*+/\\?[\]^|\w\d]*)*\/?)$/;
+
+    // [/\w%.\-_?+@\d&=$]
     const testInput = (e) => {
       if (newLink !== "" || e.target.value !== "") {
         const testResult = testRegex.test(e.target.value.trim());
