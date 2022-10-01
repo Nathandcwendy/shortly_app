@@ -19,9 +19,6 @@ const MainBottom = () => {
       setNewLink("Loading...");
       inputRef.current.classList.add("focus:border-green-300");
       inputRef.current.classList.remove("focus:border-Red");
-      console.log(
-        inputRef.current.classList.contains("focus:border-green-300")
-      );
       try {
         const response = await fetch(`${API_URL}${url}`);
         const { ok, result } = await response.json();
