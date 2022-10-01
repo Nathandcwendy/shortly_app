@@ -8,7 +8,7 @@ const MainBottom = () => {
   const [newLink, setNewLink] = useState("");
   const [url, setUrl] = useState(null);
   const [results, setResults] = useState([]);
-  const [inputStatus, setInputStatus] = useState(false);
+  const [inputFocus, setInputFocus] = useState(false);
   const [fetchError, setFetchError] = useState("");
   const inputRef = useRef();
 
@@ -17,6 +17,11 @@ const MainBottom = () => {
   const shortenLink = async () => {
     if (url) {
       setNewLink("Loading...");
+      inputRef.current.classList.add("focus:border-green-300");
+      inputRef.current.classList.remove("focus:border-Red");
+      console.log(
+        inputRef.current.classList.contains("focus:border-green-300")
+      );
       try {
         const response = await fetch(`${API_URL}${url}`);
         const { ok, result } = await response.json();
@@ -33,6 +38,7 @@ const MainBottom = () => {
           setFetchError("");
           setNewLink("");
           setUrl(null);
+          inputRef.current.classList.add("focus:border-Red");
           inputRef.current.classList.remove("focus:border-green-300");
         } else {
           throw new Error("Sorry, could not shorten this url");
@@ -54,40 +60,37 @@ const MainBottom = () => {
   };
 
   useEffect(() => {
-    const getInputStatus = () => {
-      if (document.activeElement === inputRef.current && newLink === "") {
-        return true;
-      } else {
-        return false;
-      }
+    // const getInputStatus = () => {
+    //   if (document.activeElement === inputRef.current && newLink === "") {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // };
+    const testUrl = () => {
+      const testRegex =
+        /^(h?t?t?p?s?:?\/?\/?)?(w{0,3})?\.?(([\da-z.-]+)\.([a-z.]{2,6})([-._!"`'#%&,:;<>=@{}~$()*+/\\?[\]^|\w\d]*)*\/?)$/;
+
+      const testInput = () => {
+        if (newLink !== "" || inputRef.current.value !== "") {
+          const testResult = testRegex.test(newLink.trim());
+          const getResult = function () {
+            if (testResult) {
+              inputRef.current.classList.add("focus:border-green-300");
+              setUrl(newLink);
+              setFetchError("");
+            } else {
+              inputRef.current.classList.remove("focus:border-green-300");
+              setUrl(null);
+            }
+          };
+          getResult();
+        }
+      };
+      testInput();
     };
-    setInputStatus(getInputStatus());
+    testUrl();
   }, [newLink]);
-
-  const testUrl = (e) => {
-    const testRegex =
-      /^(h?t?t?p?s?:?\/?\/?)?(w{0,3})?\.?(([\da-z.-]+)\.([a-z.]{2,6})([-._!"`'#%&,:;<>=@{}~$()*+/\\?[\]^|\w\d]*)*\/?)$/;
-
-    // [/\w%.\-_?+@\d&=$]
-    const testInput = (e) => {
-      if (newLink !== "" || e.target.value !== "") {
-        const testResult = testRegex.test(e.target.value.trim());
-        const getResult = function (e) {
-          if (testResult) {
-            const result = e.target.value;
-            inputRef.current.classList.add("focus:border-green-300");
-            setUrl(result);
-            setFetchError("");
-          } else {
-            inputRef.current.classList.remove("focus:border-green-300");
-            setUrl(null);
-          }
-        };
-        getResult(e);
-      }
-    };
-    testInput(e);
-  };
 
   return (
     <>
@@ -96,10 +99,10 @@ const MainBottom = () => {
           newLink={newLink}
           setNewLink={setNewLink}
           inputRef={inputRef}
-          inputStatus={inputStatus}
+          inputFOcus={inputFocus}
+          setInputFocus={setInputFocus}
           shortenLink={shortenLink}
           fetchError={fetchError}
-          testUrl={testUrl}
         />
         <Links results={results} setResults={setResults} />
       </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const NewLink = ({ results, setResults, result }) => {
+const NewLink = ({ results, result }) => {
   const [copied, setCopied] = useState(false);
   const handleCopy = async (e, id) => {
     const copiedResult = results.find((result) => result.id === id);

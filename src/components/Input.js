@@ -3,11 +3,11 @@ import React from "react";
 const Input = ({
   newLink,
   setNewLink,
-  inputStatus,
+  inputFocus,
   inputRef,
+  setInputFocus,
   shortenLink,
   fetchError,
-  testUrl,
 }) => {
   return (
     <div className="relative flex flex-col space-between bg-mob-shortenImg md:bg-desk-shortenImg bg-DarkViolet bg-[left_6rem_bottom_2rem] md:bg-center bg-bg-once bg-no-repeat py-4 xxs:py-6 md:py-14 px-4 xxs:px-6 md:px-12 lg:px-16 rounded-xl w-full text-sm xxs:text-base md:text-lg">
@@ -23,15 +23,14 @@ const Input = ({
             className="flex-grow py-3 xs:py-4 px-4 xsm:px-6 rounded-md md:rounded-xl outline-none focus:placeholder:text-Red focus:placeholder:opacity-50 border-2 border-transparent focus:border-2  focus:border-Red"
             placeholder="Shorten a link here..."
             value={newLink}
-            onChange={(e) => {
-              setNewLink(e.target.value);
-              testUrl(e);
-            }}
+            onChange={(e) => setNewLink(e.target.value)}
+            onFocus={() => setInputFocus(true)}
+            onBlur={() => setInputFocus(false)}
             autoComplete="off"
             spellCheck="false"
             required
           />
-          {inputStatus && fetchError === "" ? (
+          {inputFocus && fetchError === "" ? (
             <i className="md:absolute md:bottom-6 md:left-16 text-Red text-xs xxs:text-sm md:text-base">
               Please add a link
             </i>
