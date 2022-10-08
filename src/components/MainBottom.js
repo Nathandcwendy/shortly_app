@@ -70,7 +70,7 @@ const MainBottom = () => {
 
       const testInput = () => {
         if (newLink !== "" || inputRef.current.value !== "") {
-          const testResult = testRegex.test(newLink.trim());
+          const testResult = testRegex.test(newLink.toLowerCase().trim());
           const getResult = function () {
             if (testResult) {
               inputRef.current.classList.add("focus:border-green-300");
