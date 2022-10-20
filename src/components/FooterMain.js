@@ -4,7 +4,7 @@ import { GrFacebook } from "react-icons/gr";
 
 const FooterMain = () => {
   return (
-    <div className="flex items-center flex-col lg:flex-row w-11/12 2lg:w-5/6">
+    <div className="flex items-center flex-col lg:flex-row w-11/12 2lg:w-5/6 3lg:w-9/12">
       <div className="relative top-0 left-0 md:w-full md:justify-center lg:justify-start lg:w-1/5 2lg:w-1/4 xl:w-1/3 lg:h-full flex">
         <svg
           className="w-[121px] h-[50px] md:h-[75px] lg:h-full"

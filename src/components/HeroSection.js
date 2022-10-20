@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col w-11/12 2lg:w-5/6 py-10 xsm:py-12 lg:py-[7rem]">
+    <div className="flex flex-col w-11/12 2lg:w-5/6 3lg:w-9/12 py-10 xsm:py-12 lg:py-[7rem]">
       <div className="w-full md:w-1/2 flex items-center md:items-start flex-col gap-y-4 md:gap-y-0">
         <h1 className="text-4xl leading-tight md:text-5xl lg:text-6xl xl:text-7xl md:leading-tight lg:leading-tight xl:leading-tight font-extrabold text-center md:text-left">
           More than just shorter links

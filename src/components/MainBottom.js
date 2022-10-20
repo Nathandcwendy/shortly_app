@@ -91,7 +91,7 @@ const MainBottom = () => {
 
   return (
     <>
-      <div className="relative transform -translate-y-[72px] xs:-translate-y-[92px] xxs:-translate-y-[84px] md:-translate-y-[88px] flex flex-col items-center w-11/12 2lg:w-5/6 gap-y-6 sm:gap-y-8">
+      <div className="relative transform -translate-y-[72px] xs:-translate-y-[92px] xxs:-translate-y-[84px] md:-translate-y-[88px] flex flex-col items-center w-11/12 2lg:w-5/6 3lg:w-9/12 gap-y-6 sm:gap-y-8">
         <Input
           newLink={newLink}
           setNewLink={setNewLink}
@@ -103,7 +103,7 @@ const MainBottom = () => {
         />
         <Links results={results} setResults={setResults} />
       </div>
-      <div className="flex items-center w-11/12 2lg:w-5/6">
+      <div className="flex items-center w-11/12 2lg:w-5/6 3lg:w-9/12">
         <ArticleSection />
       </div>
     </>
